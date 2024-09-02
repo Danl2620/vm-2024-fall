@@ -1,0 +1,25 @@
+#cloud-config
+write_files:
+  - path: /etc/nixos/host.nix
+    permissions: "0644"
+    content: |
+      {pkgs, ...}:
+      {
+        environment.systemPackages = with pkgs; [ vim jdk openssh ];
+      }
+  - path: /etc/nixos/users.nix
+    permissions: "0644"
+    content: |
+      {pkgs, ...}:
+      {
+        users.mutableUsers = false;
+        users.users.minecraft = {
+          isNormalUser = true;
+          home  = "/home/minecraft";
+          description  = "minecraft admind";
+          extraGroups  = [ ];
+          openssh.authorizedKeys.keys  = [ "ssh-dss AAAAB3Nza... alice@foobar" ];
+        };
+      }
+runcmd:
+  - curl https://raw.githubusercontent.com/keeakita/nixos-infect/master/nixos-infect | PROVIDER=digitalocean NIXOS_IMPORT=./host.nix NIX_CHANNEL=nixos-23.05 bash 2>&1 | tee /tmp/infect.log
