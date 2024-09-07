@@ -1,4 +1,4 @@
 #cloud-config
 runcmd:
-  - curl https://raw.githubusercontent.com/keeakita/nixos-infect/master/nixos-infect | PROVIDER=digitalocean NIXOS_IMPORT=./host.nix NIX_CHANNEL=nixos-23.05 bash 2>&1 | tee /tmp/infect.log
   - mkdir -p /opt/minecraft && cd /opt/minecraft && git clone https://github.com/Danl2620/vm-2024-fall.git
+  - curl https://raw.githubusercontent.com/keeakita/nixos-infect/master/nixos-infect | PROVIDER=digitalocean NIXOS_IMPORT=./host.nix NIX_CHANNEL=nixos-23.05 bash 2>&1 | tee /tmp/infect.log

@@ -1,7 +1,14 @@
-# path: /etc/nixos/users.nix
+# path: /etc/nixos/host.nix
 # permissions: "0644"
 {pkgs, ...}:
 {
+    nixpkgs.config.allowUnfreePredicate = pkg:
+      builtins.elem (lib.getName pkg) [
+        "minecraft-server"
+      ];
+
+    environment.systemPackages = with pkgs; [ vim jdk openssh minecraft-server ];
+
     users.users.minecraft = {
         isNormalUser = true;
         home  = "/home/minecraft";
