@@ -1,7 +1,8 @@
 ### TODO
 
-* Enable ufw firewall
-* investigate https://github.com/Infinidoge/nix-minecraft
+* [x] Enable ufw firewall ✅ 2024-09-07
+* [ ] switch ssh server to port other than 22
+* [ ] investigate https://github.com/Infinidoge/nix-minecraft
 * update iteration for nix files in github (on macbook) -> running on server
 	* edit, save
 	* commit, push
@@ -9,9 +10,11 @@
 	* pull
 	* _something_
 	* `nixos-rebuild switch -L`
-* try [crafty](https://docs.craftycontrol.com/pages/getting-started/installation/linux/#automated-install-script-quick) vanilla on a droplet temp
-* finish enable flake on macos
-* nix flake check on repo
+* [ ] switch to non-root user for admin
+* [ ] disable root ssh
+* [x] try [crafty](https://docs.craftycontrol.com/pages/getting-started/installation/linux/#automated-install-script-quick) vanilla on a droplet temp ✅ 2024-09-07
+* [ ] finish enable flake on macos
+* [ ] nix flake check on repo
 * back to start /\
 
 ### Notes
