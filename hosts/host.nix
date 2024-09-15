@@ -2,12 +2,13 @@
 # permissions: "0644"
 {pkgs, ...}:
 {
-    nixpkgs.config.allowUnfreePredicate = pkg:
-      builtins.elem (lib.getName pkg) [
-        "minecraft-server"
-      ];
+    # nix.settings.experimental-features = [ "nix-command" "flakes" ];
+    # nixpkgs.config.allowUnfreePredicate = pkg:
+    #   builtins.elem (lib.getName pkg) [
+    #     "minecraft-server"
+    #   ];
 
-    environment.systemPackages = with pkgs; [ vim jdk openssh minecraft-server ];
+    # environment.systemPackages = with pkgs; [ vim jdk openssh minecraft-server ];
 
     users.users.minecraft = {
         isNormalUser = true;

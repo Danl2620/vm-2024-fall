@@ -13,8 +13,8 @@
 * [ ] switch to non-root user for admin
 * [ ] disable root ssh
 * [x] try [crafty](https://docs.craftycontrol.com/pages/getting-started/installation/linux/#automated-install-script-quick) vanilla on a droplet temp ✅ 2024-09-07
-* [ ] finish enable flake on macos
-* [ ] nix flake check on repo
+* [x] finish enable flake on macos ✅ 2024-09-08
+* [x] nix flake check on repo ✅ 2024-09-08
 * back to start /\
 
 ### Notes

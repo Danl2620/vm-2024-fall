@@ -9,9 +9,10 @@
   };
 
   outputs = inputs : {
+    nix.settings.experimental-features = [ "nix-command" "flakes" ];
+    imports = [ inputs.nix-minecraft.nixosModules.minecraft-servers ];
+    nixpkgs.overlays = [ inputs.nix-minecraft.overlay ];
     nixosConfigurations.minecraft-vm = inputs.nixpkgs.lib.nixosSystem {
-      imports = [ inputs.nix-minecraft.nixosModules.minecraft-servers ];
-      nixpkgs.overlays = [ inputs.nix-minecraft.overlay ];
       modules = [
         inputs.garnix-lib.nixosModules.garnix
         # This is where the work happens
