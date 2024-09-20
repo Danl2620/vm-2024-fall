@@ -24,8 +24,11 @@
 ```bash
 ssh -i ~/.ssh/do_rsa minecraft@146.190.135.183
 ssh -i ~/.ssh/do_rsa root@64.23.132.98
+ssh -i ~/.ssh/do_rsa root@100.121.239.8
+ssh -i ~/.ssh/do_rsa root@10.124.0.3
 scp -i ~/.ssh/do_rsa root@209.38.151.82:server.properties ./1.19.4-server.properties
 ```
+
 
 minecraft server ip: `64.23.132.98:25565`
 
